@@ -1,0 +1,42 @@
+﻿@model Shapes.Models.Triangle
+
+@{
+    ViewBag.Title = "Index";
+
+}
+
+<h2>Acreage - Perimeter of the Triangle</h2>
+@using (Html.BeginForm("Index", "Triangel"))
+{
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.Label("The first edge")
+                @Html.TextBoxFor(m => m.FirstEdge, new { @type="number",@class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.Label("The second edge")
+                @Html.TextBoxFor(m => m.SecondEdge, new { @type = "number",@class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.Label("The third edge")
+                @Html.TextBoxFor(m => m.ThirdEdge, new { @type = "number", @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Calculate" />
+                <input type="submit" class="btn btn-default" value="Continue..." />
+            </div>
+        </div>
+
+        <div class="col-md-6">
+                <div class="@ViewBag.Class">
+                    <p>@ViewBag.ThongBao</p>
+                </div>
+
+        </div>
+    </div>
+}
+
